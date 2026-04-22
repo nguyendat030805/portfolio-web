@@ -11,9 +11,8 @@ export function useProfile() {
     loading.value = true;
     try {
         const res = await profileService.getProfile();
-        if (res && res.user) {
-        user.value = res.user; 
-        }
+        user.value = res.data; 
+
     } catch (err: any) {
         console.error("Error:", err.message);
     } finally {
@@ -28,8 +27,8 @@ export function useProfile() {
         try {
             const res = await profileService.updateProfile(formData);
             
-            if (res.user && typeof res.user === 'object') {
-                user.value = res.user; 
+            if (res.data && typeof res.data === 'object') {
+                user.value = res.data; 
             } 
 
             if (user.value) {
@@ -49,11 +48,10 @@ export function useProfile() {
         loading.value = true;
         try {
             const response = await profileService.updateProfile(formData);
-            if (response && response.user) {
-                user.value = response.user;
+            if (response && response.data) {
+                user.value = response.data;
             }
             alert("Update successful!");
-            window.location.reload();
         } catch (error) {
             alert("An error occurred!");
         } finally {

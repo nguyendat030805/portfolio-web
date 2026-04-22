@@ -15,5 +15,5 @@ export interface User {
 export interface ProfileResponse {
   status: string;
   message: string;
-  user: User; 
+  data: User; 
 }

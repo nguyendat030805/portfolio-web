@@ -10,7 +10,7 @@ export function useProject(){
         loading.value = true;
         try{
             const data: ProjectResponse = await projectService.getProject();
-            projects.value = data.projects;
+            projects.value = data.data;
         }finally{
             loading.value = false;
         }

@@ -13,7 +13,7 @@ export const authService ={
     },
 
     loginWithGoogle(): void {
-        const baseUrl = import.meta.env.VITE_API_URL || 'https://portfolio-api-1-xnrd.onrender.com';
+        const baseUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
         window.location.href = `${baseUrl}/auth/google`;
     },
 

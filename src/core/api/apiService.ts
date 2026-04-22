@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://portfolio-api-1-xnrd.onrender.com/api/v1',
+    baseURL: import.meta.env.VITE_API_URL,
     headers: {
         'Accept': 'application/json',
     },

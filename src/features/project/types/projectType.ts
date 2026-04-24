@@ -11,5 +11,5 @@ export interface Project {
 export interface ProjectResponse{
     status: string;
     message: string;
-    projects: Project[];
+    data: Project[];
 }
